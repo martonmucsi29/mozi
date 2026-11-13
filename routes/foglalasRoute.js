@@ -30,7 +30,7 @@ foglalasrouter.delete('/:id', async (req, res) => {
 
     try {   
         const [eredmeny] = await pool.query(sql, id);
-        return res.status(201).json(eredmeny);
+        return res.status(204).json(eredmeny);
     } catch (error) {
         console.error(error);
         res.status(500).json({ hiba: 'Hiba történt az adatbázisból való adat törlés során' });
